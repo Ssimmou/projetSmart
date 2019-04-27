@@ -1,10 +1,4 @@
-<?php
-session_start();
-if($_SESSION["loggedIn"] != true) {
-    echo("Access denied!");
-    header('Location:login.php');
-}
-?>
+ 
 <!DOCTYPE html>
 <html>
   <head>
