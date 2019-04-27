@@ -1,10 +1,3 @@
-<?php
-session_start();
-if($_SESSION["loggedIn"] != true) {
-    echo("Access denied!");
-    header('Location:login.php');
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,16 +12,16 @@ if($_SESSION["loggedIn"] != true) {
 <style>
   html, body { height: 100%; padding: 0; margin: 0; }
 div { width: 50%; height: 50%; float: left; position: relative ;}
-#div1 { background: #DDD; }
-#div2 { background: #AAA; }
-#div3 { background: #777; }
-#div4 { background: #444; }
+#div1 { background: #000; }
+#div2 { background: #000; }
+#div3 { background: #000; }
+#div4 { background: #000; }
 div img{
     height: 100%;
    width: 100%;
 }
 
-
+@font-face { font-family:"sevenseg"; src: url("sevenseg.ttf") format("truetype"); }
 
 </style>
 </head>
@@ -48,8 +41,8 @@ if(isset($_POST['zone1'])){
       <script src='js/index.js'></script>
       ";
     
-  }else{
-      echo '<marquee font-family: "Orbitron", sans-serif; style = "width = 100% ; height = 100%;font-size: 4vw;" behavior="scroll" direction="left">';
+  }else{    
+      echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText"];
       echo '</marquee>';
       // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
@@ -75,12 +68,12 @@ if(isset($_POST['zone2'])){
     <script src='js/index.js'></script>
     ";
     
-  }else{
-      echo '<marquee style = "width = 100% ; height = 100%;font-size: 4vw;" behavior="scroll" direction="left">';
-      echo $_POST["myText2"];
-      echo '</marquee>';
-      // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
-  }
+  }else{    
+    echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+    echo $_POST["myText2"];
+    echo '</marquee>';
+    // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
+}
 }
 
 
@@ -102,12 +95,12 @@ if(isset($_POST['zone3'])){
     <script src='js/index.js'></script>
     ";
     
-  }else{
-      echo '<marquee style = "width = 100% ; height = 100%;font-size: 4vw;" behavior="scroll" direction="left">';
-      echo $_POST["myText3"];
-      echo '</marquee>';
-      // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
-  }
+  }else{    
+    echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+    echo $_POST["myText3"];
+    echo '</marquee>';
+    // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
+}
 }
 
 
@@ -129,8 +122,8 @@ if(isset($_POST['zone4'])){
     <script src='js/index.js'></script>
     ";
     
-  }else{
-      echo '<marquee style = "width = 100% ; height = 100%;font-size: 4vw;" behavior="scroll" direction="left">';
+  }else{    
+      echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText4"];
       echo '</marquee>';
       // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
