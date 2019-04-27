@@ -1,14 +1,14 @@
 @import "https://fonts.googleapis.com/css?family=Oswald:700";
 
-body {
-  background: black;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-}
+// body {
+//   background: black;
+//   display: flex;
+//   align-items: center;
+//   height: 100vh;
+// }
 
 .App {
-  width: 100vw;
+  width: 50vw;
   height: 156px;
   display: flex;
   background: #000000;
@@ -44,32 +44,6 @@ body {
   mix-blend-mode: multiply;
   z-index: 2;
   align-items: center;
-}
-
-.Marker {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #019cdf;
-  opacity: 1;
-  border-radius: 2px;
-  overflow: hidden;
-  animation: hueylewisandthenews 10s infinite;
-
-  &--seconds {
-    transition: height 1s linear;
-  }
-
-  &::before {
-    height: 20px;
-    width: calc(760px * 2);
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/wave.jpg);
-    position: absolute;
-    top: 0px;
-    content: "";
-    animation: wave 10s infinite linear;
-  }
 }
 
 @keyframes wave {

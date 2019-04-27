@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Oswald:700";
-body {
+/* body {
   background: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,10 +8,10 @@ body {
   -ms-flex-align: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 .App {
-  width: 100vw;
+  width: 50vw;
   height: 156px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,33 +64,6 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.Marker {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #019cdf;
-  opacity: 1;
-  border-radius: 2px;
-  overflow: hidden;
-  -webkit-animation: hueylewisandthenews 10s infinite;
-  animation: hueylewisandthenews 10s infinite;
-}
-.Marker--seconds {
-  -webkit-transition: height 1s linear;
-  transition: height 1s linear;
-}
-.Marker::before {
-  height: 20px;
-  width: calc(760px * 2);
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/wave.jpg);
-  position: absolute;
-  top: 0px;
-  content: "";
-  -webkit-animation: wave 10s infinite linear;
-  animation: wave 10s infinite linear;
 }
 
 @-webkit-keyframes wave {
