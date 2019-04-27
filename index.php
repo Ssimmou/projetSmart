@@ -36,6 +36,7 @@ if($_SESSION["loggedIn"] != true) {
   <body>
     <div>
       <H1> PMV DASHBOARD</H1>
+      <H3><a href="logout.php">log out</a></H3>
     </div>
     <div
       style="position: absolute; top:0; bottom: 0; left: 0; right: 0; margin: auto;"
