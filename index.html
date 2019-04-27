@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION["loggedIn"] != true) {
+    echo("Access denied!");
+    header('Location:login.php');
+}
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,8 +46,9 @@
             id="sel1"
             name="zone1"
             onchange="showDiv()"
+            required
           >
-            <option>please select an option</option>
+            <option value="">please select an option</option>
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
@@ -67,7 +74,8 @@
             id="sel2"
             name="zone2"
             onchange="showDiv2()"
-            ><option>please select an option</option>
+            required
+            ><option value="">please select an option</option>
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
@@ -92,8 +100,9 @@
             id="sel3"
             name="zone3"
             onchange="showDiv3()"
+            required
           >
-            <option>please select an option</option>
+            <option value="">please select an option</option>
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
@@ -118,8 +127,9 @@
             id="sel4"
             name="zone4"
             onchange="showDiv4()"
+            required
           >
-            <option>please select an option</option>
+            <option value="">please select an option</option>
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
@@ -137,7 +147,7 @@
             style="display : none ;"
           />
         </div>
-        <input id="submit" style="margin-left: 45%" type="submit" disabled />
+        <input id="submit" style="margin-left: 45%" type="submit" />
       </form>
       <script>
         var div1Text = "";
@@ -148,7 +158,6 @@
         function showDiv() {
           div1Text = document.getElementById("sel1").value;
 
-          enableSubmitButton();
           //alert(x);
           if (div1Text == "Image") {
             document.getElementById("myFile").style.display = "block";
@@ -157,11 +166,9 @@
           } else if (div1Text == "please select an option") {
             alert("please select an option");
           }
-
-          enableSubmitButton();
         }
         function showDiv2() {
-          var div2Text = document.getElementById("sel2").value;
+          div2Text = document.getElementById("sel2").value;
           //alert(div2Text);
           if (div2Text == "Image") {
             document.getElementById("myFile2").style.display = "block";
@@ -170,7 +177,7 @@
           }
         }
         function showDiv3() {
-          var div3Text = document.getElementById("sel3").value;
+          div3Text = document.getElementById("sel3").value;
           //alert(div3Text);
           if (div3Text == "Image") {
             document.getElementById("myFile3").style.display = "block";
@@ -179,7 +186,7 @@
           }
         }
         function showDiv4() {
-          var div4Text = document.getElementById("sel4").value;
+          div4Text = document.getElementById("sel4").value;
           //alert(div4Text);
           if (div4Text == "Image") {
             document.getElementById("myFile4").style.display = "block";
@@ -187,23 +194,6 @@
             document.getElementById("myText4").style.display = "block";
           }
         }
-
-        function enableSubmitButton() {
-          console.log("TOTO");
-          if (div1Text != "" && div1Text != "please select an option") {
-            console.log("toto");
-            document.getElementById("submit").removeAttribute("disabled");
-          } else {
-            // ajouter attribut disable si pas déjà présent
-          }
-        }
-
-        getElementById("submit").click(function(e) {
-          if (x == "please select an option") {
-            e.preventDefault();
-            alert("test");
-          }
-        });
       </script>
     </div>
   </body>
