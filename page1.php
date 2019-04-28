@@ -8,7 +8,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="css/style.css">
+
 <style>
   html, body { height: 100%; padding: 0; margin: 0; }
 div { width: 50%; height: 50%; float: left; position: relative ;}
@@ -35,11 +35,7 @@ if(isset($_POST['zone1'])){
   }else if($_POST['zone1']=="Clock")
   {
       echo "
-      <div style='position: absolute; top: 30%;' id='app'></div>
-      <script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
-      <script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
-      <script src='js/index.js'></script>
-      ";
+      <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>      ";
     
   }else{    
       echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
@@ -62,19 +58,15 @@ if(isset($_POST['zone2'])){
   }else if($_POST['zone2']=="Clock")
   {
     echo "
-    <div style='position: absolute; top: 30%;' id='app'></div>
-    <script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
-    <script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
-    <script src='js/index.js'></script>
-    ";
-    
-  }else{    
+    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+  
+}}else{    
     echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
     echo $_POST["myText2"];
     echo '</marquee>';
     // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
 }
-}
+
 
 
 ?>
@@ -89,13 +81,10 @@ if(isset($_POST['zone3'])){
   }else if($_POST['zone3']=="Clock")
   {
     echo "
-    <div style='position: absolute; top: 30%;' id='app'></div>
-    <script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
-    <script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
-    <script src='js/index.js'></script>
+    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>
     ";
-    
-  }else{    
+  
+}else{    
     echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
     echo $_POST["myText3"];
     echo '</marquee>';
@@ -116,20 +105,29 @@ if(isset($_POST['zone4'])){
   }else if($_POST['zone4']=="Clock")
   {
     echo "
-    <div style='position: absolute; top: 30%;' id='app'></div>
-    <script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
-    <script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
-    <script src='js/index.js'></script>
-    ";
-    
-  }else{    
+    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+  
+}else{    
       echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText4"];
       echo '</marquee>';
-      // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
+      
   }
 }
 
 
 ?>
 </div>
+
+<script>
+	var boite = document.getElementById('heure');
+   // variable objet
+ 
+   function horloge() 
+   {
+      var heure =new Date();
+      //alert(heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds());
+	   boite.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
+   }
+   setInterval("horloge()", 1000);
+</script>

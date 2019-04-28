@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION["loggedIn"] != true) {
     echo("Access denied!");
-    header('Location:login.php');
+    header('Location:login.php');//b db jbdhb jd
 }
 ?>
 <!DOCTYPE html>
