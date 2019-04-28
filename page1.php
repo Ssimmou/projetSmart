@@ -11,17 +11,17 @@
 
 <style>
   html, body { height: 100%; padding: 0; margin: 0; }
-div { width: 50%; height: 50%; float: left; position: relative ;}
-#div1 { background: #000; }
-#div2 { background: #000; }
-#div3 { background: #000; }
-#div4 { background: #000; }
-div img{
-    height: 100%;
-   width: 100%;
-}
+  div { width: 50%; height: 50%; float: left; position: relative ;}
+  #div1 { background: #000; }
+  #div2 { background: #000; }
+  #div3 { background: #000; }
+  #div4 { background: #000; }
+  div img{
+      height: 100%;
+    width: 100%;
+  }
 
-@font-face { font-family:"sevenseg"; src: url("sevenseg.ttf") format("truetype"); }
+  @font-face { font-family:"sevenseg"; src: url("sevenseg.ttf") format("truetype"); }
 
 </style>
 </head>
@@ -35,13 +35,13 @@ if(isset($_POST['zone1'])){
   }else if($_POST['zone1']=="Clock")
   {
       echo "
-      <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>      ";
+      <div id='hours' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>      ";
     
   }else{    
       echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText"];
       echo '</marquee>';
-      // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
+      
   }
 }
 
@@ -58,16 +58,16 @@ if(isset($_POST['zone2'])){
   }else if($_POST['zone2']=="Clock")
   {
     echo "
-    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
   
-}}else{    
-    echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
-    echo $_POST["myText2"];
-    echo '</marquee>';
-    // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
+}else{    
+      echo '<marquee  style = "width = 100% ; height = 100%; color : #b333cc ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+      echo $_POST["myText2"];
+      echo '</marquee>';
+      
+  }
+
 }
-
-
 
 ?>
 </div>
@@ -81,14 +81,14 @@ if(isset($_POST['zone3'])){
   }else if($_POST['zone3']=="Clock")
   {
     echo "
-    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>
+    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>
     ";
   
 }else{    
-    echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+    echo '<marquee  style = "width = 100% ; height = 100%; color : #4ccc33 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
     echo $_POST["myText3"];
     echo '</marquee>';
-    // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
+    
 }
 }
 
@@ -105,10 +105,10 @@ if(isset($_POST['zone4'])){
   }else if($_POST['zone4']=="Clock")
   {
     echo "
-    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
   
 }else{    
-      echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+      echo '<marquee  style = "width = 100% ; height = 100%; color : #33ccb3 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText4"];
       echo '</marquee>';
       
@@ -120,14 +120,11 @@ if(isset($_POST['zone4'])){
 </div>
 
 <script>
-	var boite = document.getElementById('heure');
-   // variable objet
- 
-   function horloge() 
+	var data = document.getElementById('hours');
+   function clock() 
    {
-      var heure =new Date();
-      //alert(heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds());
-	   boite.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
+      var hours =new Date();
+	   data.innerHTML  = hours.getHours()+":"+ hours.getMinutes();
    }
-   setInterval("horloge()", 1000);
+   setInterval("clock()", 1000);
 </script>
