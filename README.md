@@ -9,10 +9,9 @@ included in the database directory.
 
 > login : admin
 
-
 > Password : root
 
-You can choose between 3 widgets, text, displaying a picture, and a clock.
+You can choose between 4 widgets, text, displaying a picture,temperature and a clock.
 You should choose a widget for all the four parts to be allowed to continue.
 When clicking submit, you are redirected to a new page "page1.php".
 This page is the one to be displayed.

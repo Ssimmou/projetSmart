@@ -35,10 +35,17 @@ if(isset($_POST['zone1'])){
   }else if($_POST['zone1']=="Clock")
   {
       echo "
-      <div id='hours' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>      ";
+      <div id='hours' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:20vw; font-family:sevenseg, sans-serif;'></div>      ";
     
-  }else{    
-      echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+  }
+  else if($_POST['zone1']=="Temperature"){
+    echo "
+      <div id='temp' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:17vw; font-family:sevenseg, sans-serif;'></div>      ";
+
+  }
+  
+  else{    
+      echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:25vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText"];
       echo '</marquee>';
       
@@ -58,10 +65,17 @@ if(isset($_POST['zone2'])){
   }else if($_POST['zone2']=="Clock")
   {
     echo "
-    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:20vw; font-family:sevenseg, sans-serif;'></div>    ";
   
-}else{    
-      echo '<marquee  style = "width = 100% ; height = 100%; color : #b333cc ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+}
+else if($_POST['zone2']=="Temperature"){
+  echo "
+  <div id='temp' style = 'width = 100% ; height = 100%; color : #ff9f00 ;top : 20%;font-size:17vw; font-family:sevenseg, sans-serif;'></div>      ";
+
+}
+
+else{    
+      echo '<marquee  style = "width = 100% ; height = 100%; color : #b333cc ;font-size:25vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText2"];
       echo '</marquee>';
       
@@ -81,11 +95,19 @@ if(isset($_POST['zone3'])){
   }else if($_POST['zone3']=="Clock")
   {
     echo "
-    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>
+    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:20vw; font-family:sevenseg, sans-serif;'></div>
     ";
   
-}else{    
-    echo '<marquee  style = "width = 100% ; height = 100%; color : #4ccc33 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+}
+else if($_POST['zone3']=="Temperature"){
+
+  echo "
+      <div id='temp' style = 'width = 100% ; height = 100%; color : #ff9f00 ;top : 20%;font-size:17vw; font-family:sevenseg, sans-serif;'></div>      ";
+
+}
+
+else{    
+    echo '<marquee  style = "width = 100% ; height = 100%; color : #4ccc33 ;font-size:25vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
     echo $_POST["myText3"];
     echo '</marquee>';
     
@@ -102,13 +124,23 @@ if(isset($_POST['zone4'])){
   if($_POST['zone4']=="Image"){
     $imageData = file_get_contents($_FILES['myFile4']['tmp_name']);
     echo sprintf('<img src="data:image/png;base64,%s" />', base64_encode($imageData));
-  }else if($_POST['zone4']=="Clock")
+  }
+  else if($_POST['zone4']=="Temperature"){
+
+    echo "
+      <div id='temp' style = 'width = 100% ; height = 100%; color : #ff9f00 ;top : 20%;font-size:17vw; font-family:sevenseg, sans-serif;'></div>      ";
+
+  }
+  
+  else if($_POST['zone4']=="Clock")
   {
     echo "
-    <div id='hours' style = 'width = 100% ; height = 100%; color : #3399cc ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+    <div id='hours' style = 'width = 100% ;padding-left: 15%; height = 100%; color : #3399cc ;top : 20%;font-size:20vw; font-family:sevenseg, sans-serif;'></div>    ";
   
-}else{    
-      echo '<marquee  style = "width = 100% ; height = 100%; color : #33ccb3 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
+}else
+
+{    
+      echo '<marquee  style = "width = 100% ; height = 100%; color : #33ccb3 ;font-size:20vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText4"];
       echo '</marquee>';
       
@@ -128,3 +160,27 @@ if(isset($_POST['zone4'])){
    }
    setInterval("clock()", 1000);
 </script>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+var divtemp = document.getElementById('temp');
+$.getJSON( "http://api.openweathermap.org/data/2.5/weather?q=Tours&units=metric&APPID=21219aa7b5226bb67febc96c01241146", function(data) {
+console.log(data);
+
+//var city = data.name ; 
+//var etat = data.weather[0].main;
+var temp = data.main.temp;
+//var wind = data.wind.speed;
+//var country =data.sys.country ; 
+  
+//$(".location").append(city);
+//$(".heading").append(etat);
+divtemp.innerHTML = temp+"°C";
+//$(".windspeed").append(wind);
+//$(".country").append(country);
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>

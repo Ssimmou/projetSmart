@@ -55,6 +55,7 @@ if($_SESSION["loggedIn"] != true) {
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
+            <option>Temperature</option>
           </select>
           <input
             type="file"
@@ -82,6 +83,7 @@ if($_SESSION["loggedIn"] != true) {
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
+            <option>Temperature</option>
           </select>
           <input
             type="file"
@@ -109,6 +111,7 @@ if($_SESSION["loggedIn"] != true) {
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
+            <option>Temperature</option>
           </select>
           <input
             type="file"
@@ -136,6 +139,7 @@ if($_SESSION["loggedIn"] != true) {
             <option>Image</option>
             <option>Text</option>
             <option>Clock</option>
+            <option>Temperature</option>
           </select>
           <input
             type="file"

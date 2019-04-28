@@ -6,7 +6,6 @@ $password=""; // Mysql password
 $db_name="login"; // Database name
 $tbl_name="login"; // Table name
 
-// Connect to server and select database.
 
 
 $conn = new mysqli($host, $username, $password, $db_name);
@@ -16,15 +15,15 @@ if ($conn->connect_error) {
 } 
 
 // username and password sent from form
-$myusername=$_POST['login'];
-$mypassword=$_POST['password'];
-
-// To protect MySQL injection (more detail about MySQL injection)
-$myusername = stripslashes($myusername);
-$mypassword = stripslashes($mypassword);
+$myUserName=$_POST['login'];
+$myPassWord=$_POST['password'];
 
 
-$sql="SELECT * FROM $tbl_name WHERE login='$myusername' and password='$mypassword'";
+$myUserName = stripslashes($myUserName);
+$myPassWord = stripslashes($myPassWord);
+
+
+$sql="SELECT * FROM $tbl_name WHERE login='$myUserName' and password='$myPassWord'";
 
 $result = $conn->query($sql);
 
