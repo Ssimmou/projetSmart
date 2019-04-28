@@ -8,6 +8,8 @@ You need a basic Apache server on board, and import the database
 included in the database directory.
 
 > login : admin
+
+
 > Password : root
 
 You can choose between 3 widgets, text, displaying a picture, and a clock.
