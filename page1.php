@@ -35,8 +35,7 @@ if(isset($_POST['zone1'])){
   }else if($_POST['zone1']=="Clock")
   {
       echo "
-      <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;font-size:18vw; font-family:sevenseg, sans-serif;'></div>
-      ";
+      <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>      ";
     
   }else{    
       echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
@@ -59,16 +58,15 @@ if(isset($_POST['zone2'])){
   }else if($_POST['zone2']=="Clock")
   {
     echo "
-    <div id='heure2' style = 'width = 100% ; height = 100%; color : #FF0000 ;font-size:18vw; font-family:sevenseg, sans-serif;'></div>
-    ";
-    
-  }else{    
+    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+  
+}}else{    
     echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
     echo $_POST["myText2"];
     echo '</marquee>';
     // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
 }
-}
+
 
 
 ?>
@@ -83,10 +81,10 @@ if(isset($_POST['zone3'])){
   }else if($_POST['zone3']=="Clock")
   {
     echo "
-    <div id='heure3' style = 'width = 100% ; height = 100%; color : #FF0000 ;font-size:18vw; font-family:sevenseg, sans-serif;'></div>
+    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>
     ";
-    
-  }else{    
+  
+}else{    
     echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
     echo $_POST["myText3"];
     echo '</marquee>';
@@ -107,10 +105,9 @@ if(isset($_POST['zone4'])){
   }else if($_POST['zone4']=="Clock")
   {
     echo "
-    <div id='heure4' style = 'width = 100% ; height = 100%; color : #FF0000 ;font-size:18vw; font-family:sevenseg, sans-serif;'></div>
-    ";
-    
-  }else{    
+    <div id='heure' style = 'width = 100% ; height = 100%; color : #FF0000 ;top : 20%;font-size:30vw; font-family:sevenseg, sans-serif;'></div>    ";
+  
+}else{    
       echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText4"];
       echo '</marquee>';
@@ -124,21 +121,13 @@ if(isset($_POST['zone4'])){
 
 <script>
 	var boite = document.getElementById('heure');
-  var boite3 = document.getElementById('heure3');
-  var boite2 = document.getElementById('heure2');
-  var boite4 = document.getElementById('heure4'); // variable objet
+   // variable objet
  
    function horloge() 
    {
-    
       var heure =new Date();
       //alert(heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds());
-     
 	   boite.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
-     boite2.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
-     boite3.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
-     boite4.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
-
    }
    setInterval("horloge()", 1000);
 </script>
