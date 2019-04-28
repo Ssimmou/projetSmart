@@ -8,7 +8,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="css/style.css">
+
 <style>
   html, body { height: 100%; padding: 0; margin: 0; }
 div { width: 50%; height: 50%; float: left; position: relative ;}
@@ -114,7 +114,7 @@ if(isset($_POST['zone4'])){
       echo '<marquee  style = "width = 100% ; height = 100%; color : #FF0000 ;font-size:30vw; font-family:sevenseg, sans-serif;" behavior="scroll" direction="left">';
       echo $_POST["myText4"];
       echo '</marquee>';
-      // echo "<p style = 'width = 100% ; height = 100%;font-size: 4vw;'>SOUFIANE SIMMOU</p> ";
+      
   }
 }
 
@@ -134,10 +134,10 @@ if(isset($_POST['zone4'])){
       var heure =new Date();
       //alert(heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds());
      
-	   boite.innerHTML  = heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds();
-     boite2.innerHTML  = heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds();
-     boite3.innerHTML  = heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds();
-     boite4.innerHTML  = heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds();
+	   boite.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
+     boite2.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
+     boite3.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
+     boite4.innerHTML  = heure.getHours()+":"+ heure.getMinutes();
 
    }
    setInterval("horloge()", 1000);
