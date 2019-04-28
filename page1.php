@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
 <style>
-  html, body { height: 100%; padding: 0; margin: 0; }
+  html, body { height: 100%; padding: 0; margin: 0; overflow:hidden; }
+ 
   div { width: 50%; height: 50%; float: left; position: relative ;}
   #div1 { background: #000; }
   #div2 { background: #000; }
